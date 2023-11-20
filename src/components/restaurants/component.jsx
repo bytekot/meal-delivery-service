@@ -1,11 +1,9 @@
 import { Restaurant } from '../restaurant/component'
 
-export const Restaurants = ({ restaurants }) => {
-    return (
-        <div>
-            {restaurants.map(restaurant =>
-                <Restaurant key={restaurant.id} data={restaurant}></Restaurant>
-            )}
-        </div>
-    )
-}
+export const Restaurants = ({ restaurants }) => (
+    <div>
+        {restaurants.map(restaurant =>
+            <Restaurant key={restaurant.id} data={restaurant} />
+        )}
+    </div>
+)
