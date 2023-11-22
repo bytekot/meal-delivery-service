@@ -1,7 +1,11 @@
 import { List } from '../list/component'
 
-export const Restaurant = ({ data }) => {
-    const { name, menu, reviews } = data
+export const Restaurant = ({ restaurant }) => {
+    if (!restaurant) {
+        return null
+    } 
+
+    const { name, menu, reviews } = restaurant
 
     return (
         <div>

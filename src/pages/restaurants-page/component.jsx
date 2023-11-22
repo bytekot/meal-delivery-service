@@ -1,9 +1,19 @@
-import { RestaurantNames } from '../../components/restaurant-names/component'
-import { Restaurants } from '../../components/restaurants/component'
+import { useState } from 'react'
 
-export const RestaurantsPage = ({ restaurants }) => (
-    <section>
-        <RestaurantNames names={restaurants.map(restaurant => restaurant.name)} />
-        <Restaurants restaurants={restaurants} />
-    </section>
-)
+import { RestaurantTabs } from '../../components/restaurant-tabs/component'
+import { Restaurant } from '../../components/restaurant/component'
+
+export const RestaurantsPage = ({ restaurants }) => {
+    const [selectedTab, setSelectedTab] = useState();
+    const restaurant = restaurants.find(({ id }) => selectedTab && id === selectedTab.id)
+
+    return (
+        <section>
+            <RestaurantTabs
+                restaurants={restaurants}
+                onTabSelect={setSelectedTab}
+            />
+            <Restaurant restaurant={restaurant} />
+        </section>
+    )
+}
