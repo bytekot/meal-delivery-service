@@ -1,4 +1,5 @@
-import { List } from '../list/component'
+import { Menu } from '../menu/component'
+import { Reviews } from '../reviews/component'
 
 export const Restaurant = ({ restaurant }) => {
     if (!restaurant) {
@@ -10,8 +11,8 @@ export const Restaurant = ({ restaurant }) => {
     return (
         <div>
             <h2>{name}</h2>
-            <List title='Menu' items={menu.map(item => item.name)} />
-            <List title='Reviews' items={reviews.map(item => item.text)} />
+            <Menu items={menu} />
+            <Reviews items={reviews} />
         </div>
     )
 }
