@@ -1,14 +1,13 @@
-import { useEffect } from 'react';
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 export const AmountField = ({
     value = 0,
     min = 0,
     max = 5,
     step = 1,
-    onChange = value => {},
+    onChange = value => { },
 }) => {
-    const [amount, setAmount] = useState(value);
+    const [amount, setAmount] = useState(value)
 
     useEffect(() => onChange(amount), [amount])
 

@@ -4,7 +4,7 @@ import { RestaurantTabs } from '../../components/restaurant-tabs/component'
 import { Restaurant } from '../../components/restaurant/component'
 
 export const RestaurantsPage = ({ restaurants }) => {
-    const [selectedTab, setSelectedTab] = useState();
+    const [selectedTab, setSelectedTab] = useState()
     const restaurant = restaurants.find(({ id }) => selectedTab && id === selectedTab.id)
 
     return (

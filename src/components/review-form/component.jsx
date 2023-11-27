@@ -2,15 +2,17 @@ import { useReducer } from 'react'
 import { AmountField } from '../amount-field/component'
 
 const DEFAULT_FORM_VALUES = {
-    title: '',
+    name: '',
     text: '',
     rating: 5,
 }
 
-const reducer = (state, { type, payload }) => {
+const reducer = (state, action) => {
+    const { type, payload } = action
+
     switch (type) {
-        case 'setTitle':
-            return { ...state, title: payload }
+        case 'setName':
+            return { ...state, name: payload }
         case 'setText':
             return { ...state, text: payload }
         case 'setRating':
@@ -27,12 +29,12 @@ export const ReviewForm = () => {
         <div>
             <strong>Leave a review</strong>
             <div>
-                <label htmlFor='title'>Title</label>
+                <label htmlFor='name'>Name</label>
                 <input
-                    id='title'
+                    id='name'
                     type='text'
-                    value={formValues.title}
-                    onChange={event => dispatch({ type: 'setTitle', payload: event.target.value })}
+                    value={formValues.name}
+                    onChange={event => dispatch({ type: 'setName', payload: event.target.value })}
                 />
             </div>
             <div>
