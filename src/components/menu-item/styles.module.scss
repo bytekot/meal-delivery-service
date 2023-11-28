@@ -1,0 +1,11 @@
+.menuItem {
+    display: flex;
+
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px;
+
+    .title {
+        margin-right: 15px;
+    }
+}

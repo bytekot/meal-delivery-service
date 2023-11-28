@@ -14,7 +14,7 @@ export const Restaurant = ({ restaurant }) => {
             <h2>{name}</h2>
             <Menu items={menu} />
             <Reviews items={reviews} />
-            <ReviewForm />
+            {/* <ReviewForm /> */}
         </div>
     )
 }

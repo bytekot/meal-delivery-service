@@ -1,5 +1,8 @@
 import { useReducer } from 'react'
+
 import { AmountField } from '../amount-field/component'
+
+import styles from './styles.module.scss'
 
 const DEFAULT_FORM_VALUES = {
     name: '',
@@ -26,7 +29,7 @@ export const ReviewForm = () => {
     const [formValues, dispatch] = useReducer(reducer, DEFAULT_FORM_VALUES)
 
     return (
-        <div>
+        <div className={styles.reviewForm}>
             <strong>Leave a review</strong>
             <div>
                 <label htmlFor='name'>Name</label>
