@@ -4,16 +4,16 @@ import { RestaurantTabs } from '../../components/restaurant-tabs/component'
 import { Restaurant } from '../../components/restaurant/component'
 
 export const RestaurantsPage = ({ restaurants }) => {
-    const [selectedTab, setSelectedTab] = useState()
-    const restaurant = restaurants.find(({ id }) => selectedTab && id === selectedTab.id)
+    const [restaurantId, setRestaurantId] = useState()
+    const restaurant = restaurants.find(({ id }) => restaurantId && id === restaurantId)
 
     return (
-        <section>
+        <div>
             <RestaurantTabs
-                restaurants={restaurants}
-                onTabSelect={setSelectedTab}
+                restaurants={restaurants.map(({ id, name }) => ({ id, name }))}
+                onTabSelect={setRestaurantId}
             />
             <Restaurant restaurant={restaurant} />
-        </section>
+        </div>
     )
 }

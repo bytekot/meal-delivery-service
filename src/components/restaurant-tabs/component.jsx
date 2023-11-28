@@ -1,4 +1,4 @@
-import { RestaurantTab } from "../restaurant-tab/component"
+import { RestaurantTab } from '../restaurant-tab/component'
 
 export const RestaurantTabs = ({ restaurants, onTabSelect }) => (
     <div>
@@ -6,7 +6,7 @@ export const RestaurantTabs = ({ restaurants, onTabSelect }) => (
             <RestaurantTab
                 key={restaurant.id}
                 restaurant={restaurant}
-                onSelect={() => onTabSelect(restaurant)}
+                onSelect={() => onTabSelect(restaurant.id)}
             />
         )}
     </div>
