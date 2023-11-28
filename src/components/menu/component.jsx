@@ -5,11 +5,8 @@ export const Menu = ({ items }) => (
         <h3>Menu</h3>
         <ul>
             {items.map(({ id, name }) =>
-                <li>
-                    <MenuItem
-                        key={id}
-                        name={name}
-                    />
+                <li key={id}>
+                    <MenuItem name={name} />
                 </li>
             )}
         </ul>
