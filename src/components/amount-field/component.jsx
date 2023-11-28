@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import styles from './styles.module.scss'
 
 export const AmountField = ({
     value = 0,
@@ -15,7 +16,7 @@ export const AmountField = ({
     const decrease = () => setAmount(amount => amount - step)
 
     return (
-        <div>
+        <div className={styles.amountField}>
             <button onClick={decrease} disabled={amount === min}> - </button>
             <span>{amount}</span>
             <button onClick={increase} disabled={amount === max}> + </button>
