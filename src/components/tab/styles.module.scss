@@ -1,0 +1,13 @@
+.tab {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+
+    &.active {
+        border-bottom: 2px solid;
+    }
+
+    &:hover:not(.active) {
+        color: #333;
+    }
+}
