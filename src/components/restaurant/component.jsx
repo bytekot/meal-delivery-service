@@ -2,7 +2,6 @@ import { useState } from 'react'
 
 import { Menu } from '../menu/component'
 import { Reviews } from '../reviews/component'
-import { ReviewForm } from '../review-form/component'
 import { Tabs } from '../tabs/component'
 
 export const Restaurant = ({ restaurant }) => {
