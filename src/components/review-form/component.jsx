@@ -35,16 +35,16 @@ export const ReviewForm = () => {
 
     return (
         <div className={styles.reviewForm}>
-            <h4>Leave a review</h4>
+            <h4>Write a review</h4>
             <TextField
                 id='name'
-                label='Name'
+                emptyText="What's your name?"
                 value={formValues.name}
                 onChange={event => dispatch({ type: 'setName', payload: event.target.value })}
             />
             <TextArea
                 id='text'
-                label='Text'
+                emptyText='How was the restaurant?'
                 value={formValues.text}
                 onChange={event => dispatch({ type: 'setText', payload: event.target.value })}
             />

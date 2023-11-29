@@ -4,8 +4,9 @@
     div {
         margin: variables.$spacing-medium 0;
 
-        label {
-            display: block;
+        textarea {
+            height: 100px;
+            width: 100%;
         }
     }
 }
