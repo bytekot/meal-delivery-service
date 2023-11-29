@@ -35,7 +35,7 @@ export const ReviewForm = () => {
 
     return (
         <div className={styles.reviewForm}>
-            <h4>Write a review</h4>
+            <span>Write a review:</span>
             <TextField
                 id='name'
                 emptyText="What's your name?"

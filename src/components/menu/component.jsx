@@ -6,9 +6,9 @@ export const Menu = ({ items }) => (
     <div className={styles.menu}>
         <h3>Menu</h3>
         <ul>
-            {items.map(({ id, name }) =>
-                <li key={id}>
-                    <MenuItem name={name} />
+            {items.map((item, index) =>
+                <li key={item.id || index}>
+                    <MenuItem item={item} />
                 </li>
             )}
         </ul>

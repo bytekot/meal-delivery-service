@@ -1,12 +1,17 @@
 @use '../../styles/variables';
 
 .menuItem {
-    border: 1px solid variables.$color-light;
+    border: 1px solid variables.$color-lightest;
     border-radius: variables.$border-radius;
     display: flex;
-    padding: variables.$spacing-medium;
+    justify-content: space-between;
+    padding: variables.$spacing-large;
 
     .title {
-        margin-right: variables.$spacing-large;
+        margin-bottom: variables.$spacing-small;
+    }
+
+    .ingredients {
+        color: variables.$color-light;
     }
 }

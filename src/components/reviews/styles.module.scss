@@ -3,10 +3,10 @@
 .reviews {
     ul {
         list-style: none;
-        padding: 0px;
+        padding: 0 0 variables.$spacing-small;
 
         li {
-            background-color: variables.$color-lighter;
+            background-color: variables.$color-lightest;
             border-radius: variables.$border-radius;
             margin: variables.$spacing-large 0;
             padding: variables.$spacing-large;
