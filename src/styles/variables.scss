@@ -2,10 +2,13 @@ $border-radius: 4px;
 
 $color-default: #000;
 $color-light: rgba($color-default, 0.2);
+$color-lighter: rgba($color-default, 0.1);
 $color-primary: #6200ee;
 $color-secondary: #fff;
 
 $field-height: 30px;
+
+$box-shadow: 0 0 2px rgba($color-default, 0.5);
 
 $spacing-small: 5px;
 $spacing-medium: 10px;

@@ -1,9 +1,17 @@
+@use '../../styles/variables';
+
 .textField {
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    height: 30px;
+    border: 1px solid variables.$color-light;
+    border-radius: variables.$border-radius;
+    height: variables.$field-height;
+    padding: 0 variables.$spacing-medium;
+    outline: none;
+
+    &:focus {
+        border-color: variables.$color-primary;
+    }
 }
 
 .label {
-    margin-right: 5px;
+    margin-right: variables.$spacing-small;
 }

@@ -21,9 +21,9 @@ export const AmountField = ({
     return (
         <div className={styles.amountField}>
             { label && <label className={styles.label}>{label}</label> }
-            <Button onClick={decrease} disabled={amount <= min}> - </Button>
+            <Button type='secondary' onClick={decrease} disabled={amount <= min}> - </Button>
             <span className={styles.amount}>{amount}</span>
-            <Button onClick={increase} disabled={amount >= max}> + </Button>
+            <Button type='secondary' onClick={increase} disabled={amount >= max}> + </Button>
         </div>
     )
 }

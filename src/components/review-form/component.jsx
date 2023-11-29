@@ -44,7 +44,7 @@ export const ReviewForm = () => {
             />
             <TextArea
                 id='text'
-                emptyText='How was the restaurant?'
+                emptyText='How do you like the restaurant?'
                 value={formValues.text}
                 onChange={event => dispatch({ type: 'setText', payload: event.target.value })}
             />
@@ -56,7 +56,7 @@ export const ReviewForm = () => {
                 step={0.5}
                 onChange={value => dispatch({ type: 'setRating', payload: value })}
             />
-            <Button type={BUTTON_TYPES.PRIMARY}>Publish</Button>
+            <Button type={BUTTON_TYPES.PRIMARY}> Publish </Button>
         </div>
     )
 }
