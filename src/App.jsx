@@ -1,3 +1,6 @@
 import { RestaurantsPage } from './pages/restaurants-page/component'
 
-export const App = ({ restaurants }) => <RestaurantsPage restaurants={restaurants} />
+import './styles/index.scss'
+
+export const App = ({ restaurants }) =>
+    <RestaurantsPage restaurants={restaurants} />

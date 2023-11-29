@@ -9,6 +9,7 @@ export const AmountField = ({
     max = 5,
     step = 1,
     onChange = value => { },
+    label,
 }) => {
     const [amount, setAmount] = useState(value)
 
@@ -19,6 +20,7 @@ export const AmountField = ({
 
     return (
         <div className={styles.amountField}>
+            { label && <label className={styles.label}>{label}</label> }
             <Button onClick={decrease} disabled={amount <= min}> - </Button>
             <span className={styles.amount}>{amount}</span>
             <Button onClick={increase} disabled={amount >= max}> + </Button>

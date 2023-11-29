@@ -1,6 +1,8 @@
 import { useReducer } from 'react'
 
 import { AmountField } from '../amount-field/component'
+import { TextField } from '../text-field/component'
+import { TextArea } from '../text-area/component'
 
 import styles from './styles.module.scss'
 
@@ -30,34 +32,27 @@ export const ReviewForm = () => {
 
     return (
         <div className={styles.reviewForm}>
-            <strong>Leave a review</strong>
-            <div>
-                <label htmlFor='name'>Name</label>
-                <input
-                    id='name'
-                    type='text'
-                    value={formValues.name}
-                    onChange={event => dispatch({ type: 'setName', payload: event.target.value })}
-                />
-            </div>
-            <div>
-                <label htmlFor='text'>Text</label>
-                <textarea
-                    id='text'
-                    value={formValues.text}
-                    onChange={event => dispatch({ type: 'setText', payload: event.target.value })}
-                />
-            </div>
-            <div>
-                <label htmlFor='rating'>Rating</label>
-                <AmountField
-                    id='rating'
-                    value={formValues.rating}
-                    min={1}
-                    step={0.5} 
-                    onChange={value => dispatch({ type: 'setRating', payload: value })}
-                />
-            </div>
+            <h4>Leave a review</h4>
+            <TextField
+                id='name'
+                label='Name'
+                value={formValues.name}
+                onChange={event => dispatch({ type: 'setName', payload: event.target.value })}
+            />
+            <TextArea
+                id='text'
+                label='Text'
+                value={formValues.text}
+                onChange={event => dispatch({ type: 'setText', payload: event.target.value })}
+            />
+            <AmountField
+                id='rating'
+                label='Rating'
+                value={formValues.rating}
+                min={1}
+                step={0.5}
+                onChange={value => dispatch({ type: 'setRating', payload: value })}
+            />
         </div>
     )
 }

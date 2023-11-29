@@ -1,3 +1,5 @@
+import { ReviewForm } from '../review-form/component'
+
 import styles from './styles.module.scss'
 
 export const Reviews = ({ items }) => (
@@ -8,5 +10,6 @@ export const Reviews = ({ items }) => (
                 <li key={id}>{text}</li>
             )}
         </ul>
+        <ReviewForm />
     </div>
 )

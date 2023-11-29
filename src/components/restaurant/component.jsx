@@ -20,7 +20,6 @@ export const Restaurant = ({ restaurant }) => {
             <Tabs tabs={['Menu', 'Reviews']} onTabSelect={setActiveTab} />
             { activeTab === 0 && <Menu items={menu} /> }
             { activeTab === 1 && <Reviews items={reviews} /> }
-            {/* <ReviewForm /> */}
         </div>
     )
 }
