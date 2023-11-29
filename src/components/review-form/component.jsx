@@ -3,6 +3,9 @@ import { useReducer } from 'react'
 import { AmountField } from '../amount-field/component'
 import { TextField } from '../text-field/component'
 import { TextArea } from '../text-area/component'
+import { Button } from '../button/component'
+
+import { BUTTON_TYPES } from '../../constants/common'
 
 import styles from './styles.module.scss'
 
@@ -53,6 +56,7 @@ export const ReviewForm = () => {
                 step={0.5}
                 onChange={value => dispatch({ type: 'setRating', payload: value })}
             />
+            <Button type={BUTTON_TYPES.PRIMARY}>Publish</Button>
         </div>
     )
 }

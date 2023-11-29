@@ -8,11 +8,14 @@ $color-secondary: variables.$color-secondary;
     border-width: 1px;
     border-radius: variables.$border-radius;
     cursor: pointer;
-    min-height: 25px;
-    min-width: 25px;
+    height: 30px;
+    min-width: 30px;
+    padding: 0 variables.$spacing-medium;
 
     &.primary {
         background-color: $color-primary;
+        border: none;
+        color: #fff;
 
         &[disabled] {
             background-color: utils.get-disabled-color($color-primary);
