@@ -1,6 +1,33 @@
+@use '../../styles/variables';
+@use '../../styles/utils';
+
+$color-primary: variables.$color-primary;
+$color-secondary: variables.$color-secondary;
+
 .button {
     border-width: 1px;
-    border-radius: 3px;
+    border-radius: variables.$border-radius;
     cursor: pointer;
-    min-width: 20px;
+    min-height: 25px;
+    min-width: 25px;
+
+    &.primary {
+        background-color: $color-primary;
+
+        &[disabled] {
+            background-color: utils.get-disabled-color($color-primary);
+        }
+    }
+
+    &.secondary {
+        background-color: $color-secondary;
+
+        &[disabled] {
+            background-color: utils.get-disabled-color($color-secondary);
+        }
+    }
+
+    &[disabled] {
+        cursor: default;
+    }
 }

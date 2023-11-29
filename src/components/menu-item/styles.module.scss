@@ -1,11 +1,12 @@
-.menuItem {
-    display: flex;
+@use '../../styles/variables';
 
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    padding: 10px;
+.menuItem {
+    border: 1px solid variables.$color-light;
+    border-radius: variables.$border-radius;
+    display: flex;
+    padding: variables.$spacing-medium;
 
     .title {
-        margin-right: 15px;
+        margin-right: variables.$spacing-large;
     }
 }

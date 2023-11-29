@@ -1,14 +1,17 @@
+@use '../../styles/variables';
+
+$spacing: variables.$spacing-medium;
+
 .reviews {
     ul {
         list-style: none;
         padding: 0px;
 
         li {
-            background-color: #eee;
-            // border: 1px solid #ccc;
-            border-radius: 6px;
-            margin: 10px 0;
-            padding: 10px;
+            background-color: variables.$color-light;
+            border-radius: variables.$border-radius;
+            margin: $spacing 0;
+            padding: $spacing;
         }
     }
 }

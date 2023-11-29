@@ -1,0 +1,7 @@
+@function get-disabled-color($color) {
+    @return mix($color, #fff, 50%);
+}
+
+@function get-hover-color($color) {
+    @return rgba($color, 0.8);
+}

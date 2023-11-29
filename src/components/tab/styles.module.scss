@@ -1,3 +1,6 @@
+@use '../../styles/variables';
+@use '../../styles/utils';
+
 .tab {
     background: transparent;
     border: none;
@@ -5,9 +8,10 @@
 
     &.active {
         border-bottom: 2px solid;
+        color: variables.$color-primary;
     }
 
     &:hover:not(.active) {
-        color: #333;
+        color: utils.get-hover-color(variables.$color-default)
     }
 }

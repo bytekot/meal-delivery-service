@@ -1,6 +1,8 @@
+@use '../../styles/variables';
+
 .reviewForm {
     div {
-        margin: 10px 0;
+        margin: variables.$spacing-medium 0;
 
         label {
             display: block;
