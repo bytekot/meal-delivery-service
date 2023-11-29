@@ -15,6 +15,8 @@ const DEFAULT_FORM_VALUES = {
     rating: 5,
 }
 
+const RATING_STEP = 0.5;
+
 const reducer = (state, action) => {
     const { type, payload } = action
 
@@ -23,8 +25,10 @@ const reducer = (state, action) => {
             return { ...state, name: payload }
         case 'setText':
             return { ...state, text: payload }
-        case 'setRating':
-            return { ...state, rating: payload }
+        case 'increaseRating':
+            return { ...state, rating: state.rating + RATING_STEP }
+        case 'decreaseRating':
+            return { ...state, rating: state.rating - RATING_STEP }
         default:
             return state
     }
@@ -53,8 +57,8 @@ export const ReviewForm = () => {
                 label='Rating'
                 value={formValues.rating}
                 min={1}
-                step={0.5}
-                onChange={value => dispatch({ type: 'setRating', payload: value })}
+                onPlus={() => dispatch({ type: 'increaseRating' })}
+                onMinus={() => dispatch({ type: 'decreaseRating' })}
             />
             <Button type={BUTTON_TYPES.PRIMARY}> Publish </Button>
         </div>
