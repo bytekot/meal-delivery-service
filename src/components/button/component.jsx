@@ -7,7 +7,7 @@ import styles from './styles.module.scss'
 export const Button = ({
     className = '',
     disabled = false,
-    type,
+    type = BUTTON_TYPES.DEFAULT,
     onClick,
     children,
 }) => {
