@@ -1,24 +1,38 @@
 import { useState, useEffect } from 'react'
+import { Button } from '../button/component'
+
+import { BUTTON_TYPES } from '../../constants/components'
+
+import styles from './styles.module.scss'
 
 export const AmountField = ({
     value = 0,
     min = 0,
     max = 5,
-    step = 1,
-    onChange = value => { },
-}) => {
-    const [amount, setAmount] = useState(value)
+    onPlus,
+    onMinus,
+    label,
+}) => (
+    <div className={styles.amountField}>
+        {
+            label && <label className={styles.label}>{label}</label>
+        }
+        <Button
+            type={BUTTON_TYPES.SECONDARY}
+            onClick={onMinus}
+            disabled={value <= min}
+        > 
+            - 
+        </Button>
 
-    useEffect(() => onChange(amount), [amount])
+        <span className={styles.amount}>{value}</span>
 
-    const increase = () => setAmount(amount => amount + step)
-    const decrease = () => setAmount(amount => amount - step)
-
-    return (
-        <div>
-            <button onClick={decrease} disabled={amount === min}> - </button>
-            <span>{amount}</span>
-            <button onClick={increase} disabled={amount === max}> + </button>
-        </div>
-    )
-}
+        <Button
+            type={BUTTON_TYPES.SECONDARY}
+            onClick={onPlus}
+            disabled={value >= max}
+        >
+            +
+        </Button>
+    </div>
+)

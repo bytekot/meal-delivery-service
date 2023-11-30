@@ -1,0 +1,49 @@
+@use '../../styles/variables';
+@use '../../styles/utils';
+
+$color-primary: variables.$color-primary;
+$color-secondary: variables.$color-secondary;
+$size: variables.$field-height;
+
+.button {
+    border: none;
+    border-radius: variables.$border-radius;
+    box-shadow: variables.$box-shadow;
+    cursor: pointer;
+    height: $size;
+    min-width: $size;
+    letter-spacing: 0.05em;
+    padding: 0 variables.$spacing-medium;
+
+    &.primary {
+        background-color: $color-primary;
+        border: none;
+        color: #fff;
+
+        &:hover {
+            background-color: utils.get-hover-color($color-primary);
+        }
+
+        &[disabled] {
+            background-color: utils.get-disabled-color($color-primary);
+        }
+    }
+
+    &.secondary {
+        background-color: $color-secondary;
+
+        &:hover {
+            background-color: utils.get-hover-color($color-secondary);
+        }
+
+        &[disabled] {
+            background-color: utils.get-disabled-color($color-secondary);
+        }
+    }
+
+    &[disabled] {
+        border: 1px solid variables.$color-lightest;
+        box-shadow: none;
+        cursor: default;
+    }
+}

@@ -1,0 +1,12 @@
+@use '../../styles/variables';
+
+$spacing: variables.$spacing-small;
+
+.tabs {
+    border-bottom: 1px solid variables.$color-lightest;
+
+    button {
+        margin-right: $spacing;
+        padding-bottom: $spacing;
+    }
+}

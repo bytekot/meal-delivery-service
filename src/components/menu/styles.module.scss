@@ -1,0 +1,12 @@
+@use '../../styles/variables';
+
+.menu {
+    ul {
+        list-style: none;
+        padding: 0;
+
+        li {
+            margin: variables.$spacing-medium 0;
+        }
+    }
+}

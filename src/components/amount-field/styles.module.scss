@@ -1,0 +1,13 @@
+@use '../../styles/variables.scss';
+
+$spacing: variables.$spacing-medium;
+
+.amountField {
+    .amount {
+        padding: 0 $spacing;
+    }
+
+    .label {
+        margin-right: $spacing;
+    }
+}

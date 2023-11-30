@@ -1,0 +1,20 @@
+@use '../../styles/variables';
+@use '../../styles/utils';
+
+.tab {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    letter-spacing: 0.03em;
+    padding: variables.$spacing-small;
+
+    &.active {
+        border-bottom: 2px solid;
+        color: variables.$color-primary;
+    }
+
+    &:hover:not(.active) {
+        color: utils.get-hover-color(variables.$color-default)
+    }
+}

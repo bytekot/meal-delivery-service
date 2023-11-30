@@ -1,19 +1,20 @@
 import { useState } from 'react'
 
-import { RestaurantTabs } from '../../components/restaurant-tabs/component'
+import { Tabs } from '../../components/tabs/component'
 import { Restaurant } from '../../components/restaurant/component'
 
+import styles from './styles.module.scss'
+
 export const RestaurantsPage = ({ restaurants }) => {
-    const [selectedTab, setSelectedTab] = useState()
-    const restaurant = restaurants.find(({ id }) => selectedTab && id === selectedTab.id)
+    const [restaurantIndex, setRestaurantIndex] = useState(0)
 
     return (
-        <section>
-            <RestaurantTabs
-                restaurants={restaurants}
-                onTabSelect={setSelectedTab}
+        <div className={styles.restaurantsPage}>
+            <Tabs
+                tabs={restaurants.map(({ name }) => name)}
+                onTabSelect={setRestaurantIndex}
             />
-            <Restaurant restaurant={restaurant} />
-        </section>
+            <Restaurant restaurant={restaurants[restaurantIndex]} />
+        </div>
     )
 }

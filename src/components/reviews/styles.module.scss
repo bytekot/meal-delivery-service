@@ -1,0 +1,8 @@
+@use '../../styles/variables';
+
+.reviews {
+    ul {
+        list-style: none;
+        padding: 0 0 variables.$spacing-small;
+    }
+}

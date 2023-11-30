@@ -1,0 +1,17 @@
+@use '../../styles/variables';
+
+.menuItem {
+    border: 1px solid variables.$color-lightest;
+    border-radius: variables.$border-radius;
+    display: flex;
+    justify-content: space-between;
+    padding: variables.$spacing-large;
+
+    .title {
+        margin-bottom: variables.$spacing-medium;
+    }
+
+    .ingredients {
+        color: variables.$color-light;
+    }
+}

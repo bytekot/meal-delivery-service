@@ -1,0 +1,16 @@
+@use '../../styles/variables';
+
+.reviewForm {
+    div {
+        margin: variables.$spacing-medium 0;
+
+        textarea {
+            height: 100px;
+            width: 100%;
+        }
+    }
+
+    .publishButton {
+        margin-top: variables.$spacing-large;
+    }
+}

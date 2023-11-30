@@ -1,0 +1,17 @@
+@use '../../styles/variables';
+
+.textArea {
+    border: 1px solid variables.$color-lighter;
+    border-radius: variables.$border-radius;
+    height: variables.$field-height;
+    padding: variables.$spacing-medium;
+    outline: none;
+
+    &:focus {
+        border-color: variables.$color-primary;
+    }
+}
+
+.label {
+    margin-right: variables.$spacing-small;
+}
