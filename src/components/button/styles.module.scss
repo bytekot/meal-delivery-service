@@ -41,6 +41,8 @@ $size: variables.$field-height;
     }
 
     &[disabled] {
+        border: 1px solid variables.$color-lightest;
+        box-shadow: none;
         cursor: default;
     }
 }
