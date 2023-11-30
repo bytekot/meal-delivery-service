@@ -1,0 +1,13 @@
+@use '../../styles/variables';
+
+.review {
+    background-color: variables.$color-lightest;
+    border-radius: variables.$border-radius;
+    margin: variables.$spacing-large 0;
+    padding: variables.$spacing-large;
+
+    .user {
+        font-size: 14px;
+        padding-bottom: variables.$spacing-small;
+    }
+}
