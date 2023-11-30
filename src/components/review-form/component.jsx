@@ -60,7 +60,12 @@ export const ReviewForm = () => {
                 onPlus={() => dispatch({ type: 'increaseRating' })}
                 onMinus={() => dispatch({ type: 'decreaseRating' })}
             />
-            <Button type={BUTTON_TYPES.PRIMARY}> Publish </Button>
+            <Button
+                className={styles.publishButton}
+                type={BUTTON_TYPES.PRIMARY}
+            >
+                Publish
+            </Button>
         </div>
     )
 }
