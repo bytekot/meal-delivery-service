@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Button } from '../button/component'
 
-import { BUTTON_TYPES } from '../../constants/common'
+import { BUTTON_TYPES } from '../../constants/components'
 
 import styles from './styles.module.scss'
 

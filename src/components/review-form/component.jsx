@@ -5,7 +5,7 @@ import { TextField } from '../text-field/component'
 import { TextArea } from '../text-area/component'
 import { Button } from '../button/component'
 
-import { BUTTON_TYPES } from '../../constants/common'
+import { BUTTON_TYPES } from '../../constants/components'
 
 import styles from './styles.module.scss'
 
@@ -44,7 +44,7 @@ export const ReviewForm = () => {
                 id='name'
                 emptyText="What's your name?"
                 value={formValues.name}
-                onChange={event => dispatch({ type: 'setName', payload: event.target.value })}
+                onChange={event => dispatch({type: 'setName', payload: event.target.value })}
             />
             <TextArea
                 id='text'

@@ -1,6 +1,6 @@
 import classNames from 'classnames'
 
-import { BUTTON_TYPES } from '../../constants/common'
+import { BUTTON_TYPES } from '../../constants/components'
 
 import styles from './styles.module.scss'
 

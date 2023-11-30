@@ -12,6 +12,7 @@ $size: variables.$field-height;
     cursor: pointer;
     height: $size;
     min-width: $size;
+    letter-spacing: 0.05em;
     padding: 0 variables.$spacing-medium;
 
     &.primary {
