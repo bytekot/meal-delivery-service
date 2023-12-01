@@ -8,8 +8,14 @@ $background-color: linear-gradient(
 );
 $height: variables.$spacing-large * 4;
 
+$button-spacing: variables.$spacing-large;
+
 .header {
     background-image: $background-color;
     box-shadow: variables.$box-shadow;
     height: $height;
+
+    .button {
+        margin: $button-spacing 0 $button-spacing $button-spacing;
+    }
 }
