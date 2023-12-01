@@ -1,12 +1,23 @@
 import styles from './styles.module.scss'
 
-export const TextArea = ({ id, label, value, onChange, emptyText }) => (
+import classNames from 'classnames'
+
+export const TextArea = ({
+    id,
+    label,
+    className,
+    value,
+    onChange,
+    emptyText,
+}) => (
     <div>
-        { label && <label htmlFor={id} className={styles.label}>{label}</label> }
+        {
+            label && <label htmlFor={id} className={styles.label}>{label}</label>
+        }
         <textarea
             id={id}
             value={value}
-            className={styles.textArea}
+            className={classNames(styles.textArea, className)}
             onChange={onChange}
             placeholder={emptyText}
         />

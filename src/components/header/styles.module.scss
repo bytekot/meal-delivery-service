@@ -1,0 +1,15 @@
+@use '../../styles/variables';
+@use '../../styles/utils';
+
+$background-color: linear-gradient(
+    100deg,
+    variables.$color-primary,
+    utils.get-hover-color(variables.$color-primary)
+);
+$height: variables.$spacing-large * 4;
+
+.header {
+    background-image: $background-color;
+    box-shadow: variables.$box-shadow;
+    height: $height;
+}

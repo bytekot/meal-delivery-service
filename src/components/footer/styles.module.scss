@@ -1,0 +1,10 @@
+@use '../../styles/variables';
+
+$background-color: variables.$background-color-default;
+$height: variables.$spacing-large * 8;
+
+.footer {
+    background-color: $background-color;
+    box-shadow: variables.$box-shadow;
+    height: $height;
+}

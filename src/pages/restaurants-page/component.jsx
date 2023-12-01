@@ -1,20 +1,19 @@
 import { useState } from 'react'
 
+import { Layout } from '../../components/layout/component'
 import { Tabs } from '../../components/tabs/component'
 import { Restaurant } from '../../components/restaurant/component'
-
-import styles from './styles.module.scss'
 
 export const RestaurantsPage = ({ restaurants }) => {
     const [restaurantIndex, setRestaurantIndex] = useState(0)
 
     return (
-        <div className={styles.restaurantsPage}>
+        <Layout>
             <Tabs
                 tabs={restaurants.map(({ name }) => name)}
                 onTabSelect={setRestaurantIndex}
             />
             <Restaurant restaurant={restaurants[restaurantIndex]} />
-        </div>
+        </Layout>
     )
 }
