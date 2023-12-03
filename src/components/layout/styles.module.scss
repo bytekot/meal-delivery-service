@@ -3,6 +3,9 @@
 $max-width: 800px;
 
 .layout {
+    background-color: var(--background-color);
+    color: var(--color-default);
+
     display: grid;
     grid-template-rows: auto 1fr auto;
     height: 100%;

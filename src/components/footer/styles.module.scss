@@ -1,12 +1,12 @@
 @use '../../styles/variables';
 
-$background-color: variables.$background-color-default;
+$background-color: var(--background-color);
 $height: variables.$spacing-large * 8;
 $button-spacing: variables.$spacing-large;
 
 .footer {
     background-color: $background-color;
-    box-shadow: variables.$box-shadow;
+    box-shadow: var(--box-shadow);
     height: $height;
 
     .button {
