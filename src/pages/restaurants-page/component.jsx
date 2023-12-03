@@ -10,14 +10,14 @@ export const RestaurantsPage = ({ restaurants }) => {
     const [restaurantIndex, setRestaurantIndex] = useState(0)
 
     return (
-        <Layout className={theme}>
-            {/* <div className={theme}> */}
+        <Layout>
+            <div className={theme}>
                 <Tabs
                     tabs={restaurants.map(({ name }) => name)}
                     onTabSelect={setRestaurantIndex}
                 />
                 <Restaurant restaurant={restaurants[restaurantIndex]} />
-            {/* </div> */}
+            </div>
         </Layout>
     )
 }
