@@ -8,7 +8,7 @@ import { Tabs } from '../tabs/component'
 import { selectRestaurantById } from '../../store/features/restaurant/selectors'
 
 export const Restaurant = ({ restaurantId }) => {
-    const restaurant = useSelector(state => selectRestaurantById(state, restaurantId))
+    const restaurant = restaurantId && useSelector(state => selectRestaurantById(state, restaurantId))
 
     if (!restaurant) {
         return null

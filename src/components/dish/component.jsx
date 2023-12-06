@@ -8,13 +8,13 @@ import { selectDishById } from '../../store/features/dish/selectors'
 import styles from './styles.module.scss'
 
 export const Dish = ({ id }) => {
-    const item = useSelector(state => selectDishById(state, id))
+    const dish = id && useSelector(state => selectDishById(state, id))
 
-    if (!item) {
+    if (!dish) {
         return null
     }
 
-    const { ingredients = [], name } = item
+    const { ingredients = [], name } = dish
     const [amount, setAmount] = useState(0)
 
     return (

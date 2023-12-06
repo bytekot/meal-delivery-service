@@ -5,7 +5,7 @@ import { Layout } from '../../components/layout/component'
 import { Tabs } from '../../components/tabs/component'
 import { Restaurant } from '../../components/restaurant/component'
 
-import { selectRestaurantById, selectRestaurantIds } from '../../store/features/restaurant/selectors'
+import { selectRestaurantIds, selectRestaurantNameById } from '../../store/features/restaurant/selectors'
 
 export const RestaurantsPage = () => {
     const restaurantIds = useSelector(selectRestaurantIds)
@@ -13,7 +13,7 @@ export const RestaurantsPage = () => {
 
     const tabs = restaurantIds.map(id => ({
         id: id,
-        label: useSelector(state => selectRestaurantById(state, id)).name,
+        label: useSelector(state => selectRestaurantNameById(state, id)),
     }))
 
     return (
