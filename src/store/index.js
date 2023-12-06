@@ -5,9 +5,13 @@ import { dishSlice } from './features/dish'
 import { reviewSlice } from './features/review'
 import { userSlice } from './features/user'
 
-export const store = configureStore({
-    restaurants: restaurantSlice.reducer,
-    dishes: dishSlice.reducer,
-    reviews: reviewSlice.reducer,
-    users: userSlice.reducer,
+const store = configureStore({
+    reducer: {
+        restaurant: restaurantSlice.reducer,
+        dish: dishSlice.reducer,
+        review: reviewSlice.reducer,
+        user: userSlice.reducer,
+    },
 })
+
+export default store

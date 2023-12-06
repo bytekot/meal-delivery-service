@@ -9,19 +9,31 @@ export const Tabs = ({ tabs, onTabSelect }) => {
 
     return (
         <div className={styles.tabs}>
-            {tabs.map((label, index) =>
-                <Tab
-                    key={index}
-                    label={label}
-                    active={active === index}
-                    onSelect={() => {
-                        if (onTabSelect) {
-                            onTabSelect(index)
-                        }
-                        setActive(index)
-                    }}
-                />
-            )}
+            {tabs.map((tab, index) => {
+
+                if (typeof tab === 'string') {
+                    tab = {
+                        id: index,
+                        label: tab
+                    }
+                }
+
+                const id = tab.id || index
+
+                return (
+                    <Tab
+                        key={id}
+                        label={tab.label}
+                        active={active === id}
+                        onSelect={() => {
+                            if (onTabSelect) {
+                                onTabSelect(id)
+                            }
+                            setActive(id)
+                        }}
+                    />
+                )
+            })}
         </div>
     )
 }

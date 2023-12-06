@@ -1,14 +1,14 @@
-import { MenuItem } from '../menu-item/component'
+import { Dish } from '../dish/component'
 
 import styles from './styles.module.scss'
 
-export const Menu = ({ items }) => (
+export const Menu = ({ dishes }) => (
     <div className={styles.menu}>
         <h3>Menu</h3>
         <ul>
-            {items.map((item, index) =>
-                <li key={item.id || index}>
-                    <MenuItem item={item} />
+            {dishes.map(id =>
+                <li key={id}>
+                    <Dish id={id} />
                 </li>
             )}
         </ul>

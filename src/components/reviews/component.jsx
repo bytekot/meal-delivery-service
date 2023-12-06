@@ -3,13 +3,13 @@ import { ReviewForm } from '../review-form/component'
 
 import styles from './styles.module.scss'
 
-export const Reviews = ({ items }) => (
+export const Reviews = ({ reviews }) => (
     <div className={styles.reviews}>
         <h3>Reviews</h3>
         <ul>
-            {items.map(item =>
-                <li key={item.id}>
-                    <Review review={item} />
+            {reviews.map(id =>
+                <li key={id}>
+                    <Review id={id} />
                 </li>
             )}
         </ul>

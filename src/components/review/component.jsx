@@ -1,12 +1,24 @@
+import { useSelector } from 'react-redux'
+
+import { selectReviewById } from '../../store/features/review/selectors'
+import { selectUserById } from '../../store/features/user/selectors'
+
 import styles from './styles.module.scss'
 
-export const Review = ({ review }) => {
-    const { user, rating, text } = review
+export const Review = ({ id }) => {
+    const review = useSelector(state => selectReviewById(state, id))
+
+    if (!review) {
+        return null
+    }
+
+    const { userId, text } = review
+    const user = useSelector(state => selectUserById(state, userId))
 
     return (
         <div className={styles.review}>
             <div className={styles.user}>
-                <strong>{user}</strong>
+                <strong>{user.name}</strong>
             </div>
             <div>{text}</div>
         </div>
