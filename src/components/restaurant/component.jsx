@@ -8,20 +8,22 @@ import { Tabs } from '../tabs/component'
 import { selectRestaurantById } from '../../store/features/restaurant/selectors'
 
 export const Restaurant = ({ restaurantId }) => {
-    if (!restaurantId) {
+    const restaurant = useSelector(state => selectRestaurantById(state, restaurantId))
+
+    if (!restaurant) {
         return null
     }
 
+    const tabs = ['Menu', 'Reviews']
     const [activeTab, setActiveTab] = useState(0)
-
-    const { name, menu, reviews } = useSelector(state => selectRestaurantById(state, restaurantId))
+    const { name, menu, reviews } = restaurant
 
     return (
         <div>
             <h2>{name}</h2>
-            <Tabs tabs={['Menu', 'Reviews']} onTabSelect={setActiveTab} />
-            { activeTab === 0 && <Menu dishes={menu} /> }
-            { activeTab === 1 && <Reviews reviews={reviews} /> }
+            <Tabs tabs={tabs} onTabSelect={setActiveTab} />
+            { activeTab === 0 && <Menu dishIds={menu} /> }
+            { activeTab === 1 && <Reviews reviewIds={reviews} /> }
         </div>
     )
 }

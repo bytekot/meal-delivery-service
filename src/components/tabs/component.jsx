@@ -10,20 +10,13 @@ export const Tabs = ({ tabs, onTabSelect }) => {
     return (
         <div className={styles.tabs}>
             {tabs.map((tab, index) => {
-
-                if (typeof tab === 'string') {
-                    tab = {
-                        id: index,
-                        label: tab
-                    }
-                }
-
-                const id = tab.id || index
+                const tabData = typeof tab !== 'object' ? { id: index, label: tab } : tab
+                const { id, label } = tabData
 
                 return (
                     <Tab
                         key={id}
-                        label={tab.label}
+                        label={label}
                         active={active === id}
                         onSelect={() => {
                             if (onTabSelect) {
