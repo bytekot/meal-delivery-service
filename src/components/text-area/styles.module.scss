@@ -1,14 +1,16 @@
 @use '../../styles/variables';
 
 .textArea {
-    border: 1px solid variables.$color-lighter;
+    border: 1px solid var(--color-lighter);
     border-radius: variables.$border-radius;
+    font-family: variables.$font-family;
     height: variables.$field-height;
+    letter-spacing: 0.03em;
     padding: variables.$spacing-medium;
     outline: none;
 
     &:focus {
-        border-color: variables.$color-primary;
+        border-color: var(--color-primary);
     }
 }
 

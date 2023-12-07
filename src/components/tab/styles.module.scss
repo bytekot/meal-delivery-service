@@ -11,10 +11,10 @@
 
     &.active {
         border-bottom: 2px solid;
-        color: variables.$color-primary;
+        color: var(--color-primary);
     }
 
     &:hover:not(.active) {
-        color: utils.get-hover-color(variables.$color-default)
+        color: utils.get-hover-color(var(--color-default))
     }
 }

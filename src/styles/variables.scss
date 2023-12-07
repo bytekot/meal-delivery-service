@@ -1,15 +1,30 @@
+:root {
+    --color-default-h: 0;
+    --color-default-s: 0%;
+    --color-default-l: 0%;
+    --color-default: hsl(var(--color-default-h), var(--color-default-s), var(--color-default-l));
+
+    --color-primary-h: 265;
+    --color-primary-s: 100%;
+    --color-primary-l: 47%;
+    --color-primary: hsl(var(--color-primary-h), var(--color-primary-s), var(--color-primary-l));
+    
+    --color-light: #aaa;
+    --color-lighter: #ccc;
+    --color-lightest: #eee;
+    --color-secondary: #fff;
+    --box-shadow: 0 0 2px #aaa;
+
+    --background-color: rgb(255, 255, 255);
+
+    .theme-dark {
+        --color-secondary: #000;
+    }
+}
+
+$font-family: Roboto, sans-serif;
 $border-radius: 4px;
-
-$color-default: #000;
-$color-light: rgba($color-default, 0.5);
-$color-lighter: rgba($color-default, 0.2);
-$color-lightest: rgba($color-default, 0.1);
-$color-primary: #6200ee;
-$color-secondary: #fff;
-
 $field-height: 30px;
-
-$box-shadow: 0 0 2px rgba($color-default, 0.5);
 
 $spacing-small: 5px;
 $spacing-medium: 10px;

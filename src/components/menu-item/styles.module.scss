@@ -1,7 +1,7 @@
 @use '../../styles/variables';
 
 .menuItem {
-    border: 1px solid variables.$color-lightest;
+    border: 1px solid var(--color-lightest);
     border-radius: variables.$border-radius;
     display: flex;
     justify-content: space-between;
@@ -12,6 +12,6 @@
     }
 
     .ingredients {
-        color: variables.$color-light;
+        color: var(--color-light);
     }
 }

@@ -1,0 +1,21 @@
+@use '../../styles/variables';
+@use '../../styles/utils';
+
+$background-color: linear-gradient(
+    100deg,
+    var(--color-primary),
+    utils.get-hover-color(var(--color-primary))
+);
+$height: variables.$spacing-large * 4;
+
+$button-spacing: variables.$spacing-large;
+
+.header {
+    background-image: $background-color;
+    box-shadow: var(--box-shadow);
+    height: $height;
+
+    .button {
+        margin: $button-spacing 0 $button-spacing $button-spacing;
+    }
+}

@@ -3,3 +3,8 @@ export const BUTTON_TYPES = {
     PRIMARY: 'primary',
     SECONDARY: 'secondary',
 }
+
+export const THEMES = {
+    LIGHT: 'theme-light',
+    DARK: 'theme-dark',
+}

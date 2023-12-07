@@ -1,15 +1,17 @@
 @use './variables';
 
 @function get-disabled-color($color) {
-    @if $color == #fff {
-        @return mix(variables.$color-lightest, #fff, 50%);
-    }
-    @return mix($color, #fff, 50%);
+    // @if $color == #fff {
+    //     @return mix(var(--color-lightest), #fff, 50%);
+    // }
+    // @return mix($color, #fff, 50%);
+    @return $color;
 }
 
 @function get-hover-color($color) {
-    @if $color == #fff {
-        @return rgba(variables.$color-lightest, 0.1);
-    }
-    @return rgba($color, 0.8);
+    // @if $color == #fff {
+    //     @return rgba(var(--color-lightest), 0.1);
+    // }
+    // @return rgba($color, 0.8);
+    @return $color;
 }
