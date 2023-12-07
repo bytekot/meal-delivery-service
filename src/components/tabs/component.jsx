@@ -13,14 +13,15 @@ import styles from './styles.module.scss'
  *
  * @returns {JSX.Element} Tabs component
  */
-export const Tabs = ({ tabs, onTabSelect }) => {
+export const Tabs = ({ tabs, onTabSelect = () => {} }) => {
     const [active, setActive] = useState(0)
 
     return (
         <div className={styles.tabs}>
             {tabs.map((tab, index) => {
-                const tabData = typeof tab !== 'object' ? { id: index, label: tab } : tab
-                const { id, label } = tabData
+                const { id, label } = typeof tab !== 'object'
+                    ? { id: index, label: tab } 
+                    : tab
 
                 return (
                     <Tab
@@ -28,9 +29,7 @@ export const Tabs = ({ tabs, onTabSelect }) => {
                         label={label}
                         active={active === id}
                         onSelect={() => {
-                            if (onTabSelect) {
-                                onTabSelect(id)
-                            }
+                            onTabSelect(id)
                             setActive(id)
                         }}
                     />

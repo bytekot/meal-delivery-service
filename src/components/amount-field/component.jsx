@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import { Button } from '../button/component'
 
 import { BUTTON_TYPES } from '../../constants/components'
