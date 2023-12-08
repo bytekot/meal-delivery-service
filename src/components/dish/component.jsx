@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 import { AmountField } from '../amount-field/component'
 
-import { selectDishById } from '../../store/features/dish/selectors'
+import { selectDishById } from '../../store/entities/dish/selectors'
 
 import styles from './styles.module.scss'
 

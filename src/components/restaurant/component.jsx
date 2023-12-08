@@ -5,7 +5,7 @@ import { Menu } from '../menu/component'
 import { Reviews } from '../reviews/component'
 import { Tabs } from '../tabs/component'
 
-import { selectRestaurantById } from '../../store/features/restaurant/selectors'
+import { selectRestaurantById } from '../../store/entities/restaurant/selectors'
 
 export const Restaurant = ({ restaurantId }) => {
     const [activeTab, setActiveTab] = useState(0)

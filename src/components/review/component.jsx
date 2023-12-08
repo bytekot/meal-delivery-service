@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 
-import { selectReviewById } from '../../store/features/review/selectors'
-import { selectUserById } from '../../store/features/user/selectors'
+import { selectReviewById } from '../../store/entities/review/selectors'
+import { selectUserById } from '../../store/entities/user/selectors'
 
 import styles from './styles.module.scss'
 

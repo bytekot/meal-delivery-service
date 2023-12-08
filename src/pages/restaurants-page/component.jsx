@@ -5,7 +5,7 @@ import { Layout } from '../../components/layout/component'
 import { Tabs } from '../../components/tabs/component'
 import { Restaurant } from '../../components/restaurant/component'
 
-import { selectRestaurantIds, selectRestaurantNames } from '../../store/features/restaurant/selectors'
+import { selectRestaurantIds, selectRestaurantNames } from '../../store/entities/restaurant/selectors'
 
 export const RestaurantsPage = () => {
     const restaurantIds = useSelector(selectRestaurantIds)
