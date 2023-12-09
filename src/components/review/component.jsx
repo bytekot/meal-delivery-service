@@ -1,7 +1,7 @@
 import { UserContainer } from '../user/container'
 
 import styles from './styles.module.scss'
-// divide the UI components into smart and dumb
+
 export const Review = ({ review }) => {
     if (!review) {
         return null
