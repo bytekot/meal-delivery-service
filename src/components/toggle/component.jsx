@@ -16,6 +16,7 @@ export const Toggle = ({ label, toggled, onClick, className, type }) => {
     return (
         <label 
             className={classNames(styles.toggle, className, {
+                [styles.toggled]: isToggled,
                 [styles.alt]: TOGGLE_TYPES.ALT === type,
         })}>
             <input type="checkbox" defaultChecked={isToggled} onClick={callback} />

@@ -7,21 +7,14 @@ import { THEMES, TOGGLE_TYPES } from '../../constants/components'
 
 import styles from './styles.module.scss'
 
-const THEME_LABELS = {
-    [THEMES.LIGHT]: '☀',
-    [THEMES.DARK]: '☾',
-}
-
 export const ThemeToggle = (props) => {
     const { theme, toggleTheme } = useContext(ThemeContext)
-    const isDarkThemeEnabled = theme === THEMES.DARK
 
     return (
         <Toggle
-            label={isDarkThemeEnabled ? THEME_LABELS[THEMES.DARK] : THEME_LABELS[THEMES.LIGHT]}
             className={styles.themeToggle}
             type={TOGGLE_TYPES.ALT}
-            toggled={isDarkThemeEnabled}
+            toggled={theme === THEMES.DARK}
             onClick={toggleTheme}
             {...props}
         />

@@ -50,12 +50,7 @@ $toggler-size: $field-height / 6 * 5;
             background-color: $toggler-background-color;
             border-radius: $border-radius;
             transition: 0.3s;
-
-            // content: "☀";
-            // color: #fff;
-            // font-size: 12px;
-            // text-align: center;
-            // vertical-align: middle;
+            box-shadow: var(--box-shadow);
         }
     }
 
@@ -68,21 +63,36 @@ $toggler-size: $field-height / 6 * 5;
         cursor: pointer;
     }
 
+    // todo: how to move it to the "../theme-toggle/styles.module.scss" file ?
     &.alt {
+        $border-radius: variables.$border-radius;
+
         input:checked+span {
             background-color: var(--background-color);
         }
 
         span.toggler {
             background-color: var(--background-color);
+            border-radius: $border-radius;
 
             &:before {
                 background-color: var(--color-primary);
+                border-radius: $border-radius;
+                content: "☀";
+                color: #fff;
+                font-size: 13px;
+                text-align: center;
             }
         }
 
         span.label {
             color: var(--background-color);
+        }
+
+        &.toggled {
+            span.toggler:before {
+                content: "☾";
+            }
         }
     }
 }
