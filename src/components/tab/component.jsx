@@ -4,7 +4,7 @@ import { Button } from '../button/component'
 
 import styles from './styles.module.scss'
 
-export const Tab = ({ active = false, label, onSelect }) => {
+export const Tab = ({ active = false, children, onSelect }) => {
     return (
         <Button
             className={classNames(styles.tab, {
@@ -12,7 +12,7 @@ export const Tab = ({ active = false, label, onSelect }) => {
             })}
             onClick={onSelect}
         >
-            {label}
+            {children}
         </Button>
     )
 }

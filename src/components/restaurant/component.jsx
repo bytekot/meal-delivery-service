@@ -7,6 +7,8 @@ import { Tabs } from '../tabs/component'
 
 import { selectRestaurantById } from '../../store/entities/restaurant/selectors'
 
+const RESTAURANT_TABS = ['Menu', 'Reviews']
+
 export const Restaurant = ({ restaurantId }) => {
     const [activeTab, setActiveTab] = useState(0)
     const restaurant = restaurantId && useSelector(state => selectRestaurantById(state, restaurantId))
@@ -16,14 +18,21 @@ export const Restaurant = ({ restaurantId }) => {
     }
 
     const { name, menu, reviews } = restaurant
-    const tabs = ['Menu', 'Reviews']
 
     return (
         <div>
             <h2>{name}</h2>
-            <Tabs tabs={tabs} onTabSelect={setActiveTab} />
-            { activeTab === 0 && <Menu dishIds={menu} /> }
-            { activeTab === 1 && <Reviews reviewIds={reviews} /> }
+            <Tabs
+                tabs={RESTAURANT_TABS}
+                activeTab={activeTab}
+                onTabSelect={setActiveTab}
+            />
+            {
+                activeTab === 0 && <Menu dishIds={menu} />
+            }
+            {
+                activeTab === 1 && <Reviews reviewIds={reviews} />
+            }
         </div>
     )
 }
