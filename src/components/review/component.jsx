@@ -1,25 +1,17 @@
-import { useSelector } from 'react-redux'
-
-import { selectReviewById } from '../../store/entities/review/selectors'
-import { selectUserById } from '../../store/entities/user/selectors'
+import { UserContainer } from '../user/container'
 
 import styles from './styles.module.scss'
-
-export const Review = ({ id }) => {
-    const review = useSelector(state => selectReviewById(state, id))
-
+// divide the UI components into smart and dumb
+export const Review = ({ review }) => {
     if (!review) {
         return null
     }
 
     const { userId, text } = review
-    const user = useSelector(state => selectUserById(state, userId))
 
     return (
         <div className={styles.review}>
-            <div className={styles.user}>
-                <strong>{user.name}</strong>
-            </div>
+            <UserContainer userId={userId} />
             <div>{text}</div>
         </div>
     )

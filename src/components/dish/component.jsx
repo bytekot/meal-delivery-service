@@ -1,21 +1,17 @@
 import { useState } from 'react'
-import { useSelector } from 'react-redux'
 
 import { AmountField } from '../amount-field/component'
 
-import { selectDishById } from '../../store/entities/dish/selectors'
-
 import styles from './styles.module.scss'
 
-export const Dish = ({ id }) => {
-    const dish = id && useSelector(state => selectDishById(state, id))
+export const Dish = ({ dish }) => {
+    const [amount, setAmount] = useState(0)
 
     if (!dish) {
         return null
     }
 
     const { ingredients = [], name } = dish
-    const [amount, setAmount] = useState(0)
 
     return (
         <div className={styles.dish}>
@@ -28,7 +24,6 @@ export const Dish = ({ id }) => {
                 onPlus={() => setAmount(amount => amount + 1)}
                 onMinus={() => setAmount(amount => amount - 1)}
             />
-            
         </div>
     )
 }

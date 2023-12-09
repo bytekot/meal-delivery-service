@@ -3,7 +3,7 @@ import { useSelector } from'react-redux'
 
 import { Layout } from '../../components/layout/component'
 import { RestaurantTabsContainer } from '../../components/restaurant-tabs/container'
-import { Restaurant } from '../../components/restaurant/component'
+import { RestaurantContainer } from '../../components/restaurant/container'
 
 import { selectRestaurantIds } from '../../store/entities/restaurant/selectors'
 
@@ -17,7 +17,7 @@ export const RestaurantsPage = () => {
                 activeTab={restaurantId}
                 onTabSelect={setRestaurantId}
             />
-            <Restaurant restaurantId={restaurantId} />
+            <RestaurantContainer restaurantId={restaurantId} />
         </Layout>
     )
 }
