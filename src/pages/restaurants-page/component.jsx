@@ -1,14 +1,10 @@
 import { useState } from 'react'
-import { useSelector } from'react-redux'
 
 import { Layout } from '../../components/layout/component'
 import { RestaurantTabsContainer } from '../../components/restaurant-tabs/container'
 import { RestaurantContainer } from '../../components/restaurant/container'
 
-import { selectRestaurantIds } from '../../store/entities/restaurant/selectors'
-
-export const RestaurantsPage = () => {
-    const restaurantIds = useSelector(selectRestaurantIds)
+export const RestaurantsPage = ({ restaurantIds }) => {
     const [restaurantId, setRestaurantId] = useState(restaurantIds[0])
 
     return (
@@ -17,7 +13,7 @@ export const RestaurantsPage = () => {
                 activeTab={restaurantId}
                 onTabSelect={setRestaurantId}
             />
-            <RestaurantContainer restaurantId={restaurantId} />
+            { restaurantId && <RestaurantContainer restaurantId={restaurantId} /> }
         </Layout>
     )
 }
