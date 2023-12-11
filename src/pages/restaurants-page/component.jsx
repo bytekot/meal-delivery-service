@@ -1,19 +1,23 @@
 import { useState } from 'react'
+import { useSelector } from'react-redux'
 
 import { Layout } from '../../components/layout/component'
-import { Tabs } from '../../components/tabs/component'
-import { Restaurant } from '../../components/restaurant/component'
+import { RestaurantTabsContainer } from '../../components/restaurant-tabs/container'
+import { RestaurantContainer } from '../../components/restaurant/container'
 
-export const RestaurantsPage = ({ restaurants }) => {
-    const [restaurantIndex, setRestaurantIndex] = useState(0)
+import { selectRestaurantIds } from '../../store/entities/restaurant/selectors'
+
+export const RestaurantsPage = () => {
+    const restaurantIds = useSelector(selectRestaurantIds)
+    const [restaurantId, setRestaurantId] = useState(restaurantIds[0])
 
     return (
         <Layout>
-            <Tabs
-                tabs={restaurants.map(({ name }) => name)}
-                onTabSelect={setRestaurantIndex}
+            <RestaurantTabsContainer
+                activeTab={restaurantId}
+                onTabSelect={setRestaurantId}
             />
-            <Restaurant restaurant={restaurants[restaurantIndex]} />
+            <RestaurantContainer restaurantId={restaurantId} />
         </Layout>
     )
 }

@@ -1,13 +1,17 @@
+import { UserContainer } from '../user/container'
+
 import styles from './styles.module.scss'
 
 export const Review = ({ review }) => {
-    const { user, rating, text } = review
+    if (!review) {
+        return null
+    }
+
+    const { userId, text } = review
 
     return (
         <div className={styles.review}>
-            <div className={styles.user}>
-                <strong>{user}</strong>
-            </div>
+            <UserContainer userId={userId} />
             <div>{text}</div>
         </div>
     )

@@ -1,15 +1,15 @@
-import { Review } from '../review/component'
+import { ReviewContainer } from '../review/container'
 import { ReviewForm } from '../review-form/component'
 
 import styles from './styles.module.scss'
 
-export const Reviews = ({ items }) => (
+export const Reviews = ({ reviewIds }) => (
     <div className={styles.reviews}>
         <h3>Reviews</h3>
         <ul>
-            {items.map(item =>
-                <li key={item.id}>
-                    <Review review={item} />
+            {reviewIds.map(reviewId =>
+                <li key={reviewId}>
+                    <ReviewContainer reviewId={reviewId} />
                 </li>
             )}
         </ul>

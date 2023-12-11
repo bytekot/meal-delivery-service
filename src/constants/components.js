@@ -4,6 +4,11 @@ export const BUTTON_TYPES = {
     SECONDARY: 'secondary',
 }
 
+export const TOGGLE_TYPES = {
+    DEFAULT: '',
+    ALT: 'alt',
+}
+
 export const THEMES = {
     LIGHT: 'theme-light',
     DARK: 'theme-dark',

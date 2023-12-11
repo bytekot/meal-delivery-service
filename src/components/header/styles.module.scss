@@ -15,7 +15,7 @@ $button-spacing: variables.$spacing-large;
     box-shadow: var(--box-shadow);
     height: $height;
 
-    .button {
+    .themeToggle {
         margin: $button-spacing 0 $button-spacing $button-spacing;
     }
 }
