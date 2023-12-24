@@ -5,3 +5,7 @@ export const selectRestaurantEntities = state => selectRestaurantModule(state).e
 export const selectRestaurantIds = state => selectRestaurantModule(state).ids
 
 export const selectRestaurantById = (state, id) => selectRestaurantEntities(state)[id]
+
+export const selectReviewIdsByRestaurantId = (state, restaurantId) => selectRestaurantById(state, restaurantId)?.reviews
+
+export const selectDishIdsByRestaurantId = (state, restaurantId) => selectRestaurantById(state, restaurantId)?.menu

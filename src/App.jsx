@@ -1,12 +1,11 @@
-
 import { Provider } from 'react-redux'
-import { RestaurantsPage } from './pages/restaurants-page/component'
+import { RestaurantsPageContainer } from './pages/restaurants-page/container'
 import store from './store'
 
 import './styles/index.scss'
 
 export const App = () => (
     <Provider store={store}>
-        <RestaurantsPage />
+        <RestaurantsPageContainer />
     </Provider>
 )
